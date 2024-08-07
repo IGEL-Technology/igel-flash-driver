@@ -1,0 +1,51 @@
+#
+# IGEL Flashdisk device driver configuration
+#
+
+config BLK_DEV_IGEL
+	tristate "IGEL Flash compression support"
+	select ZLIB_INFLATE
+	help
+	  IGEL Flashdisk compression support
+
+choice
+        prompt "Low level device" if BLK_DEV_IGEL=y
+        default BLK_DEV_IGEL_FLASH_HDA1
+        
+
+config BLK_DEV_IGEL_FLASH_HDA1
+        bool "/dev/hda1"
+        
+config BLK_DEV_IGEL_FLASH_HDA2
+        bool "/dev/hda2"
+
+config BLK_DEV_IGEL_FLASH_HDB1
+        bool "/dev/hdb1"
+
+config BLK_DEV_IGEL_FLASH_HDC1
+        bool "/dev/hdc1"
+
+config BLK_DEV_IGEL_FLASH_HDC2
+        bool "/dev/hdc2"
+       
+config BLK_DEV_IGEL_FLASH_HDE1
+        bool "/dev/hde1"
+
+config BLK_DEV_IGEL_FLASH_HDE2
+        bool "/dev/hde2"
+
+config BLK_DEV_IGEL_FLASH_FLA1
+        bool "/dev/fla1"
+       
+config BLK_DEV_IGEL_FLASH_SDA1
+        bool "/dev/sda1"
+
+config BLK_DEV_IGEL_FLASH_SDA2
+        bool "/dev/sda2"
+
+config BLK_DEV_IGEL_FLASH_MMCBLK0P1
+        bool "/dev/mmcblk0p1"
+
+config BLK_DEV_IGEL_FLASH_MMCBLK0P2
+        bool "/dev/mmcblk0p2"
+endchoice
